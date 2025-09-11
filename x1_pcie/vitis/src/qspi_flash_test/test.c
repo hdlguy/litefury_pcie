@@ -13,7 +13,11 @@
 
 #define SPI_DEVICE_ID	XPAR_SPI_0_DEVICE_ID
 #define INTC_DEVICE_ID	XPAR_INTC_0_DEVICE_ID
-#define SPI_INTR_ID		XPAR_INTC_0_SPI_0_VEC_ID
+//#define SPI_INTR_ID		XPAR_INTC_0_SPI_0_VEC_ID
+
+#define SPI_INTR_ID		XPAR_AXI_INTC_1_AXI_QUAD_SPI_1_IP2INTC_IRPT_INTR
+
+
 
 #define INTC		    static XIntc
 #define INTC_HANDLER	XIntc_InterruptHandler
@@ -135,10 +139,10 @@ int main(void)
 	// Specify address in the Quad Serial Flash for the Erase/Write/Read operations.
 	Address = FLASH_TEST_ADDRESS;
 	
-	uint32_t* regptr = (uint32_t *)REG_BASEADDR;
+	//uint32_t* regptr = (uint32_t *)REG_BASEADDR;
 
 	xil_printf("\r\n**** qspi_flash_test ****\r\n");
-	xil_printf("FPGA_ID = 0x%08x, FPGA_VERSION = 0x%08x\r\n", regptr[FPGA_VERSION], regptr[FPGA_VERSION]);
+	//xil_printf("FPGA_ID = 0x%08x, FPGA_VERSION = 0x%08x\r\n", regptr[FPGA_VERSION], regptr[FPGA_VERSION]);
 
 	///////////////////////// Read ID /////////////////////
 
@@ -174,7 +178,7 @@ int main(void)
 	for (int i=0; i<NUM_SECTORS; i++) {
 
 		xil_printf("Sector %d/%d\r", i+1, NUM_SECTORS);
-		regptr[LED_CONTROL] = i/4;
+		//regptr[LED_CONTROL] = i/4;
 
 		Address = FLASH_TEST_ADDRESS + i * SECTOR_SIZE;
 
@@ -201,7 +205,7 @@ int main(void)
 
 		if ((i%1024)==0) {
 			xil_printf("Page %d/%d\r", i+1, NUM_PAGES);
-			regptr[LED_CONTROL] = i/1024;
+			//regptr[LED_CONTROL] = i/1024;
 		}
 
 		Address = FLASH_TEST_ADDRESS + i * PAGE_SIZE;
@@ -245,7 +249,7 @@ int main(void)
 
 		if ((i%1024)==0) {
 			xil_printf("Page %d/%d\r", i+1, NUM_PAGES);
-			regptr[LED_CONTROL] = i/1024;
+			//regptr[LED_CONTROL] = i/1024;
 		}
 
 		Address = FLASH_TEST_ADDRESS + i * PAGE_SIZE;
@@ -280,7 +284,7 @@ int main(void)
 
 		if ((i%1024)==0) {
 			xil_printf("Page %d/%d\r", i+1, NUM_PAGES);
-			regptr[LED_CONTROL] = i/1024;
+			//regptr[LED_CONTROL] = i/1024;
 		}
 
 		Address = FLASH_TEST_ADDRESS + i * PAGE_SIZE;
