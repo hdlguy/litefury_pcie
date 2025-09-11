@@ -33,6 +33,8 @@ module top #(
     logic           regfile_rst;
     logic [3:0]     regfile_we;          
 
+    logic axi_aclk, axi_aresetn;
+
     logic [13:0]    vinstru_bram_addr;
     logic           vinstru_bram_clk;
     logic [31:0]    vinstru_bram_din;
