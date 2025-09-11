@@ -96,18 +96,18 @@ module top #(
         .resetn                 (axi_aresetn),
         .clkin                  (axi_aclk),
         //
-        .qspi_io0_i             (qspi_io0_i),
-        .qspi_io0_o             (qspi_io0_o),
-        .qspi_io0_t             (qspi_io0_t),
-        .qspi_io1_i             (qspi_io1_i),
-        .qspi_io1_o             (qspi_io1_o),
-        .qspi_io1_t             (qspi_io1_t),
-        .qspi_io2_i             (qspi_io2_i),
-        .qspi_io2_o             (qspi_io2_o),
-        .qspi_io2_t             (qspi_io2_t),
-        .qspi_io3_i             (qspi_io3_i),
-        .qspi_io3_o             (qspi_io3_o),
-        .qspi_io3_t             (qspi_io3_t),
+        .qspi_io0_i             (qspi_io_i[0]),
+        .qspi_io0_o             (qspi_io_o[0]),
+        .qspi_io0_t             (qspi_io_t[0]),
+        .qspi_io1_i             (qspi_io_i[1]),
+        .qspi_io1_o             (qspi_io_o[1]),
+        .qspi_io1_t             (qspi_io_t[1]),
+        .qspi_io2_i             (qspi_io_i[2]),
+        .qspi_io2_o             (qspi_io_o[2]),
+        .qspi_io2_t             (qspi_io_t[2]),
+        .qspi_io3_i             (qspi_io_i[3]),
+        .qspi_io3_o             (qspi_io_o[3]),
+        .qspi_io3_t             (qspi_io_t[3]),
         .qspi_ss_i              (qspi_ss_i),
         .qspi_ss_o              (qspi_ss_o),
         .qspi_ss_t              (qspi_ss_t),
@@ -125,11 +125,11 @@ module top #(
         .flash_bram_we          (flash_bram_we)        
     );
 
-    IOBUF qspi_io0_iobuf (.I(qspi_io0_o), .IO(qspi_data[0]), .O(qspi_io0_i), .T(qspi_io0_t));
-    IOBUF qspi_io1_iobuf (.I(qspi_io1_o), .IO(qspi_data[1]), .O(qspi_io1_i), .T(qspi_io1_t));
-    IOBUF qspi_io2_iobuf (.I(qspi_io2_o), .IO(qspi_data[2]), .O(qspi_io2_i), .T(qspi_io2_t));
-    IOBUF qspi_io3_iobuf (.I(qspi_io3_o), .IO(qspi_data[3]), .O(qspi_io3_i), .T(qspi_io3_t));
-    IOBUF qspi_ss_iobuf  (.I(qspi_ss_o),  .IO(qspi_ss),      .O(qspi_ss_i),  .T(qspi_ss_t));
+    IOBUF qspi_io0_iobuf (.I(qspi_io_o[0]), .IO(qspi_data[0]), .O(qspi_io_i[0]), .T(qspi_io_t[0]));
+    IOBUF qspi_io1_iobuf (.I(qspi_io_o[1]), .IO(qspi_data[1]), .O(qspi_io_i[1]), .T(qspi_io_t[1]));
+    IOBUF qspi_io2_iobuf (.I(qspi_io_o[2]), .IO(qspi_data[2]), .O(qspi_io_i[2]), .T(qspi_io_t[2]));
+    IOBUF qspi_io3_iobuf (.I(qspi_io_o[3]), .IO(qspi_data[3]), .O(qspi_io_i[3]), .T(qspi_io_t[3]));
+    IOBUF qspi_ss_iobuf  (.I(qspi_ss_o),    .IO(qspi_ss),      .O(qspi_ss_i),    .T(qspi_ss_t));
                     
 
 //    logic clk;
