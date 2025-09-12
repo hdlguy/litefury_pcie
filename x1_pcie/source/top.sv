@@ -50,6 +50,8 @@ module top #(
     logic           flash_bram_en;
     logic           flash_bram_rst;
     logic [3:0]     flash_bram_we;
+        
+    logic[3:0] led;
     
     // block diagram containing PCIe interface
     system system_i(
@@ -91,12 +93,14 @@ module top #(
         
     logic[3:0] qspi_io_i, qspi_io_o, qspi_io_t; 
     logic qspi_ss_i, qspi_ss_o, qspi_ss_t;       
-    logic startup_cfgclk, startup_cfgmclk, startup_eos, startup_preq;     
+    logic startup_cfgclk, startup_cfgmclk, startup_eos, startup_preq;
     
     // block diagram containing Microblaze for QSPI flash control.
     system2 system2_i (
         .resetn                 (axi_aresetn),
         .clkin                  (axi_aclk),
+        //
+        .led_tri_o              (led[3]),
         //
         .qspi_io0_i             (qspi_io_i[0]),
         .qspi_io0_o             (qspi_io_o[0]),
@@ -137,7 +141,6 @@ module top #(
 //    logic clk;
 //    IBUFDS #(.DIFF_TERM("TRUE"), .IBUF_LOW_PWR("TRUE"), .IOSTANDARD("DEFAULT")) IBUFDS_inst (.O(clk), .I(sysclk_p), .IB(sysclk_n));
     
-    logic[3:0] led;
     logic[27:0] led_count;
     always_ff @(posedge axi_aclk) begin
         if (pcie_reset==0) begin
@@ -161,7 +164,7 @@ module top #(
     assign slv_read[0] = ID;
     assign slv_read[1] = VERSION;
     
-    assign led = slv_reg[2][3:0];
+    assign led[2:0] = slv_reg[2][2:0];
     assign slv_read[2] = slv_reg[2];
 
     assign vinstru_pulse_enable = slv_reg[3][0];

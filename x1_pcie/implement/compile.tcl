@@ -45,7 +45,7 @@ write_hw_platform -include_bit -fixed -force -file   ./results/top.xsa
 #set_property CONFIG_VOLTAGE 3.3 [current_design]
 #set_property CFGBVS VCCO [current_design]
 
-write_bitstream -verbose -force -bin_file ./results/top1.bit
+write_bitstream -verbose -force -bin_file ./results/top.bit
 
 close_project
 
