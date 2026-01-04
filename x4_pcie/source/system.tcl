@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2024.1
+set scripts_vivado_version 2025.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -129,7 +129,7 @@ set bCheckIPsPassed 1
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
-xilinx.com:ip:xdma:4.1\
+xilinx.com:ip:xdma:4.2\
 xilinx.com:ip:util_ds_buf:2.2\
 xilinx.com:ip:blk_mem_gen:8.4\
 xilinx.com:ip:axi_bram_ctrl:4.1\
@@ -232,18 +232,27 @@ proc create_root_design { parentCell } {
   set axi_aresetn [ create_bd_port -dir O -type rst axi_aresetn ]
 
   # Create instance: xdma_0, and set properties
-  set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.1 xdma_0 ]
+  set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.2 xdma_0 ]
   set_property -dict [list \
+    CONFIG.PF0_DEVICE_ID_mqdma {9024} \
+    CONFIG.PF0_SRIOV_VF_DEVICE_ID {A034} \
+    CONFIG.PF2_DEVICE_ID_mqdma {9224} \
+    CONFIG.PF3_DEVICE_ID_mqdma {9324} \
     CONFIG.axi_data_width {128_bit} \
     CONFIG.axilite_master_en {false} \
     CONFIG.axist_bypass_en {true} \
     CONFIG.axisten_freq {125} \
     CONFIG.cfg_mgmt_if {false} \
+    CONFIG.enable_gtwizard {false} \
     CONFIG.pf0_base_class_menu {Memory_controller} \
+    CONFIG.pf0_class_code_base {05} \
+    CONFIG.pf0_class_code_interface {00} \
+    CONFIG.pf0_device_id {7024} \
     CONFIG.pf0_msi_enabled {false} \
     CONFIG.pf0_sub_class_interface_menu {RAM} \
     CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} \
     CONFIG.pl_link_cap_max_link_width {X4} \
+    CONFIG.plltype {QPLL1} \
     CONFIG.xdma_axi_intf_mm {AXI_Memory_Mapped} \
     CONFIG.xdma_rnum_chnl {2} \
     CONFIG.xdma_wnum_chnl {2} \
@@ -280,6 +289,7 @@ proc create_root_design { parentCell } {
   set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
   set_property -dict [list \
     CONFIG.C_DATA_DEPTH {2048} \
+    CONFIG.C_MON_TYPE {INTERFACE} \
     CONFIG.C_NUM_MONITOR_SLOTS {2} \
   ] $system_ila_0
 
@@ -296,10 +306,20 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets xdma_0_M_AXI_LITE] [get_bd_intf_
   connect_bd_intf_net -intf_net xdma_0_pcie_mgt [get_bd_intf_ports pcie_mgt] [get_bd_intf_pins xdma_0/pcie_mgt]
 
   # Create port connections
-  connect_bd_net -net reset_rtl_0_1 [get_bd_ports pcie_reset] [get_bd_pins xdma_0/sys_rst_n]
-  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk]
-  connect_bd_net -net xdma_0_axi_aclk [get_bd_pins xdma_0/axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_ports axi_aclk] [get_bd_pins system_ila_0/clk]
-  connect_bd_net -net xdma_0_axi_aresetn [get_bd_pins xdma_0/axi_aresetn] [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins axi_smc/aresetn] [get_bd_ports axi_aresetn] [get_bd_pins system_ila_0/resetn]
+  connect_bd_net -net reset_rtl_0_1  [get_bd_ports pcie_reset] \
+  [get_bd_pins xdma_0/sys_rst_n]
+  connect_bd_net -net util_ds_buf_IBUF_OUT  [get_bd_pins util_ds_buf/IBUF_OUT] \
+  [get_bd_pins xdma_0/sys_clk]
+  connect_bd_net -net xdma_0_axi_aclk  [get_bd_pins xdma_0/axi_aclk] \
+  [get_bd_ports axi_aclk] \
+  [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] \
+  [get_bd_pins axi_smc/aclk] \
+  [get_bd_pins system_ila_0/clk]
+  connect_bd_net -net xdma_0_axi_aresetn  [get_bd_pins xdma_0/axi_aresetn] \
+  [get_bd_ports axi_aresetn] \
+  [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] \
+  [get_bd_pins axi_smc/aresetn] \
+  [get_bd_pins system_ila_0/resetn]
 
   # Create address segments
   assign_bd_address -offset 0x00000000 -range 0x00010000 -with_name SEG_M00_AXI_0_Reg -target_address_space [get_bd_addr_spaces xdma_0/M_AXI] [get_bd_addr_segs M00_AXI/Reg] -force

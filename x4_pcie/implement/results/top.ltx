@@ -11,7 +11,7 @@
                         "type": "XSDB_V3",
                         "name": "dbg_hub",
                         "spec": "labtools_xsdbm_v3",
-                        "clk_input_freq_hz": "125000003"
+                        "clk_input_freq_hz": "125000002"
                     },
                     {
                         "type": "ILA_V3",
@@ -373,7 +373,12 @@
                                 "nets": [
                                     {
                                         "name": "system_i/system_ila_0/inst/net_slot_0_axi_arlock",
-                                        "isBus": false
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "system_i/system_ila_0/inst/net_slot_0_axi_arlock[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -779,7 +784,12 @@
                                 "nets": [
                                     {
                                         "name": "system_i/system_ila_0/inst/net_slot_0_axi_awlock",
-                                        "isBus": false
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "system_i/system_ila_0/inst/net_slot_0_axi_awlock[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -2337,7 +2347,12 @@
                                 "nets": [
                                     {
                                         "name": "system_i/system_ila_0/inst/net_slot_1_axi_arlock",
-                                        "isBus": false
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "system_i/system_ila_0/inst/net_slot_1_axi_arlock[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -2743,7 +2758,12 @@
                                 "nets": [
                                     {
                                         "name": "system_i/system_ila_0/inst/net_slot_1_axi_awlock",
-                                        "isBus": false
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "system_i/system_ila_0/inst/net_slot_1_axi_awlock[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
