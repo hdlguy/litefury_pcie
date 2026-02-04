@@ -1,6 +1,13 @@
 # litefury_pcie
 A little project to provide the fpga design for the RHS Research LiteFury M.2 PCIe board.
 
+## Submodules
+This project references an external iir_filter repo so a submodule has been added. After you clone this repo you must run:
+```
+git submodule init
+git submodule update
+```
+
 ## Results
 The PCIe lanes are wired in a non-standard way on this board. TCL reset_property and set_property commands were added to compile.tcl to handle this.  The resulting design enumerates as a Gen 2 x4 PCIe device when installed in a PC.
 
