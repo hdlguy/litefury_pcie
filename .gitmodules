@@ -1,3 +1,0 @@
-[submodule "submodules"]
-	path = submodules/iir_filter
-	url = https://github.com/hdlguy/iir_filter.git
