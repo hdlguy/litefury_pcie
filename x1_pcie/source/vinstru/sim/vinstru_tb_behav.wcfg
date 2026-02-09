@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="vinstru_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="vinstru_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="4,958.000001 us"></ZoomEndTime>
+      <Cursor1Time time="0.000000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="352"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject type="logic" fp_name="/vinstru_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/enable">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/pulse_period">
+      <obj_property name="ElementShortName">pulse_period[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_period[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/pulse_width">
+      <obj_property name="ElementShortName">pulse_width[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_width[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/pulse_amplitude">
+      <obj_property name="ElementShortName">pulse_amplitude[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_amplitude[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/noise_amplitude">
+      <obj_property name="ElementShortName">noise_amplitude[15:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_amplitude[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider13" type="divider">
+      <obj_property name="label">uut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/enable">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/run">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/done">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/pulse_period">
+      <obj_property name="ElementShortName">pulse_period[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_period[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/pulse_width">
+      <obj_property name="ElementShortName">pulse_width[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_width[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/pulse_amplitude">
+      <obj_property name="ElementShortName">pulse_amplitude[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pulse_amplitude[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/noise_amplitude">
+      <obj_property name="ElementShortName">noise_amplitude[15:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_amplitude[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/source_trigger">
+      <obj_property name="ElementShortName">source_trigger</obj_property>
+      <obj_property name="ObjectShortName">source_trigger</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/source_dv_out">
+      <obj_property name="ElementShortName">source_dv_out</obj_property>
+      <obj_property name="ObjectShortName">source_dv_out</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/source_d_out">
+      <obj_property name="ElementShortName">source_d_out[17:0]</obj_property>
+      <obj_property name="ObjectShortName">source_d_out[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeMin">-12846</obj_property>
+      <obj_property name="AnalogYRRangeMax">41807</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/run">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/done">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/state">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/data_count_clear">
+      <obj_property name="ElementShortName">data_count_clear</obj_property>
+      <obj_property name="ObjectShortName">data_count_clear</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/data_count">
+      <obj_property name="ElementShortName">data_count[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_count[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/wea">
+      <obj_property name="ElementShortName">wea[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/addra">
+      <obj_property name="ElementShortName">addra[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/dina">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/douta">
+      <obj_property name="ElementShortName">douta[31:0]</obj_property>
+      <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider32" type="divider">
+      <obj_property name="label">vsource</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/vsource_inst/heartbeat">
+      <obj_property name="ElementShortName">heartbeat</obj_property>
+      <obj_property name="ObjectShortName">heartbeat</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/vinstru_tb/uut/vsource_inst/noise_dv_out">
+      <obj_property name="ElementShortName">noise_dv_out</obj_property>
+      <obj_property name="ObjectShortName">noise_dv_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/vsource_inst/noise_data_out">
+      <obj_property name="ElementShortName">noise_data_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_data_out[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeMin">-17379</obj_property>
+      <obj_property name="AnalogYRRangeMax">17711</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">11</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/vsource_inst/noise_prod">
+      <obj_property name="ElementShortName">noise_prod[31:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_prod[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
+      <obj_property name="AnalogYRangeMin">0.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vinstru_tb/uut/vsource_inst/noise_scaled">
+      <obj_property name="ElementShortName">noise_scaled[15:0]</obj_property>
+      <obj_property name="ObjectShortName">noise_scaled[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="AnalogYRangeMin">-15178</obj_property>
+      <obj_property name="AnalogYRRangeMax">14377</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+   </wvobject>
+</wave_config>

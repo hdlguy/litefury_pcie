@@ -1,0 +1,1457 @@
+[
+    {
+        "id": "20c48bf776b506fa",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5d8a091031102694",
+        "type": "ui_tab",
+        "name": "Virtual Instrument",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7eaf90e8fa0de129",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 40,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "2ee7ef96b2162bbf",
+        "type": "ui_group",
+        "name": "Waveform",
+        "tab": "5d8a091031102694",
+        "order": 2,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3854a4487d777d7b",
+        "type": "ui_group",
+        "name": "CPU Status",
+        "tab": "5d8a091031102694",
+        "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "063a3593da680ee9",
+        "type": "ui_group",
+        "name": "Parameters",
+        "tab": "5d8a091031102694",
+        "order": 1,
+        "disp": true,
+        "width": "3",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d72205edba054996",
+        "type": "ui_group",
+        "name": "FPGA Status",
+        "tab": "5d8a091031102694",
+        "order": 4,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "82129ea82e00f69f",
+        "type": "ui_switch",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "LED",
+        "tooltip": "Turn LED on or off",
+        "group": "3854a4487d777d7b",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 350,
+        "y": 920,
+        "wires": [
+            [
+                "5acdb7d152e4dced"
+            ]
+        ]
+    },
+    {
+        "id": "1c7933a03658498b",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pulse_period",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0863b6b10e5c3569",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "noise_amplitude",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "449ee8c662d8c161",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pulse_amplitude",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0505417cdfdd431b",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pulse_width",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "173f6ac6956c85db",
+        "type": "ui_text_input",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Pulse Width",
+        "tooltip": "pulse width in samples",
+        "group": "063a3593da680ee9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "0505417cdfdd431b"
+            ]
+        ]
+    },
+    {
+        "id": "a2cfc97bc654cdaf",
+        "type": "ui_text_input",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Pulse Amplitude",
+        "tooltip": "pulse amplitude in counts",
+        "group": "063a3593da680ee9",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 380,
+        "y": 360,
+        "wires": [
+            [
+                "449ee8c662d8c161"
+            ]
+        ]
+    },
+    {
+        "id": "9a9787b69a9f0ce5",
+        "type": "ui_text_input",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Noise Amplitude",
+        "tooltip": "standard deviation of Gaussian noise in counts",
+        "group": "063a3593da680ee9",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 380,
+        "y": 400,
+        "wires": [
+            [
+                "0863b6b10e5c3569"
+            ]
+        ]
+    },
+    {
+        "id": "e3510609ea2df656",
+        "type": "debug",
+        "z": "20c48bf776b506fa",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "9e797a3f10f7ffd2",
+        "type": "ui_chart",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "group": "2ee7ef96b2162bbf",
+        "order": 1,
+        "width": "14",
+        "height": "6",
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "4096",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ad058e",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#f20d0d",
+            "#ff9896",
+            "#6405bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c183691690642448",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadFPGAVersion",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_fpga_version\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1340,
+        "wires": [
+            [
+                "6ac6a3edb321ba70"
+            ]
+        ]
+    },
+    {
+        "id": "cd518f45db1adc6e",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "d72205edba054996",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "FPGA Version",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "6ac6a3edb321ba70",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 750,
+        "y": 1340,
+        "wires": [
+            [
+                "cd518f45db1adc6e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9fee6907dd1229b2",
+        "type": "inject",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "none",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 1060,
+        "wires": [
+            [
+                "c183691690642448",
+                "0e7ddb079e181e97",
+                "cc29101d8473fae4",
+                "053f3e32a3e64339",
+                "e897b67c2310cec6",
+                "b04ddb1a399c2d32",
+                "dc1203afbc71407a",
+                "7afbd5ce535878c5"
+            ]
+        ]
+    },
+    {
+        "id": "0615640816e6ed10",
+        "type": "json",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 930,
+        "y": 740,
+        "wires": [
+            [
+                "9e797a3f10f7ffd2"
+            ]
+        ]
+    },
+    {
+        "id": "5acdb7d152e4dced",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "function 5",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\n//var command_path = global.command_path;\nvar command_path = global.get(\"command_path\");\n\nif (msg.payload) \n    command_string = command_path + \"set_fpga_led  15\" \nelse \n    command_string = command_path + \"set_fpga_led  0\" \n\nmsg.payload = command_string;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 920,
+        "wires": [
+            [
+                "45e13727887a0c9e"
+            ]
+        ]
+    },
+    {
+        "id": "45e13727887a0c9e",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 770,
+        "y": 920,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "09e9a9b773f590ac",
+        "type": "ui_button",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "group": "2ee7ef96b2162bbf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Single Event Trigger",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "e5927108d25dda83"
+            ]
+        ]
+    },
+    {
+        "id": "e5927108d25dda83",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "function 1",
+        "func": "var pulse_period;\nvar pulse_width;\nvar pulse_amplitude;\nvar noise_amplitude;\n\npulse_period = global.get(\"pulse_period\");\npulse_width = global.get(\"pulse_width\");\npulse_amplitude = global.get(\"pulse_amplitude\");\nnoise_amplitude = global.get(\"noise_amplitude\");\n\nvar command_string;\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"set_pulse_params \";\ncommand_string += pulse_period + \" \" + pulse_width + \" \" + pulse_amplitude + \" \" + noise_amplitude;\nmsg.payload = command_string;\n\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 620,
+        "wires": [
+            [
+                "70577deb8518d09a"
+            ]
+        ]
+    },
+    {
+        "id": "9c23d9c913418c4f",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "function 2",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\n\ncommand_string = command_path + \"enable_pulse\";\nmsg.payload = command_string;\nnode.send(msg);\n\ncommand_string = command_path + \"capture_waveform\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 680,
+        "wires": [
+            [
+                "bb03f29db2bcc935"
+            ]
+        ]
+    },
+    {
+        "id": "6ea1cba447850102",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "function 3",
+        "func": "\nvar record_length;\nrecord_length = global.get(\"record_length\");\n\nvar command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\n\ncommand_string = command_path + \"bram2json \" + record_length;\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 740,
+        "wires": [
+            [
+                "e34626d78c6416bf"
+            ]
+        ]
+    },
+    {
+        "id": "e34626d78c6416bf",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 790,
+        "y": 740,
+        "wires": [
+            [
+                "0615640816e6ed10"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "70577deb8518d09a",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 790,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            [
+                "9c23d9c913418c4f"
+            ]
+        ]
+    },
+    {
+        "id": "ce9dc3de86296fd0",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "record_length",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9308bc22f11e299",
+        "type": "ui_text_input",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Record Length",
+        "tooltip": "number of samples to display in the waveform",
+        "group": "063a3593da680ee9",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "ce9dc3de86296fd0"
+            ]
+        ]
+    },
+    {
+        "id": "0e7ddb079e181e97",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadCPUTemp",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_sysmon 1\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1060,
+        "wires": [
+            [
+                "04b16e6b23ab8110"
+            ]
+        ]
+    },
+    {
+        "id": "d7383cb4f801dd04",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "3854a4487d777d7b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "CPU Temp",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "04b16e6b23ab8110",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 770,
+        "y": 1060,
+        "wires": [
+            [
+                "d7383cb4f801dd04"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cc29101d8473fae4",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadCPUVCCInt",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_sysmon 2\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1120,
+        "wires": [
+            [
+                "548532faaf4a1bd3"
+            ]
+        ]
+    },
+    {
+        "id": "9e0b81834b6c7584",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "3854a4487d777d7b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "CPU VccInt",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "548532faaf4a1bd3",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 770,
+        "y": 1120,
+        "wires": [
+            [
+                "9e0b81834b6c7584"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "053f3e32a3e64339",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadCPUVCCAux",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_sysmon 3\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1180,
+        "wires": [
+            [
+                "5203719b0b3e0586"
+            ]
+        ]
+    },
+    {
+        "id": "aeeecca802cbf4e8",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "3854a4487d777d7b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "CPU VccAux",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "5203719b0b3e0586",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 770,
+        "y": 1180,
+        "wires": [
+            [
+                "aeeecca802cbf4e8"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "be936561f30b90b4",
+        "type": "ui_button",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "group": "3854a4487d777d7b",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Update Status",
+        "tooltip": "Update status data",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 1180,
+        "wires": [
+            [
+                "0e7ddb079e181e97",
+                "cc29101d8473fae4",
+                "053f3e32a3e64339",
+                "c183691690642448",
+                "e897b67c2310cec6",
+                "b04ddb1a399c2d32",
+                "dc1203afbc71407a",
+                "7afbd5ce535878c5"
+            ]
+        ]
+    },
+    {
+        "id": "f37a8e5eb3a4c452",
+        "type": "ui_text_input",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Pulse Period",
+        "tooltip": "pulse period in samples",
+        "group": "063a3593da680ee9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": 300,
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "1c7933a03658498b"
+            ]
+        ]
+    },
+    {
+        "id": "cb9c95e1e523f02c",
+        "type": "ui_switch",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "label": "Continuous Trigger",
+        "tooltip": "Continuous trigger mode",
+        "group": "2ee7ef96b2162bbf",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 390,
+        "y": 740,
+        "wires": [
+            [
+                "07f83845e21d0e0e"
+            ]
+        ]
+    },
+    {
+        "id": "bb03f29db2bcc935",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 790,
+        "y": 680,
+        "wires": [
+            [],
+            [],
+            [
+                "6ea1cba447850102"
+            ]
+        ]
+    },
+    {
+        "id": "3b50e25ce632b816",
+        "type": "comment",
+        "z": "20c48bf776b506fa",
+        "name": "CPU Status",
+        "info": "",
+        "x": 250,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "56554ed297d6e21a",
+        "type": "comment",
+        "z": "20c48bf776b506fa",
+        "name": "Waveform Parameters",
+        "info": "",
+        "x": 300,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2eb9624d2f7de488",
+        "type": "comment",
+        "z": "20c48bf776b506fa",
+        "name": "Waveform Update",
+        "info": "",
+        "x": 310,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "07f83845e21d0e0e",
+        "type": "trigger",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-100",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "false",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 420,
+        "y": 680,
+        "wires": [
+            [
+                "e5927108d25dda83"
+            ]
+        ]
+    },
+    {
+        "id": "43eeff1d5fc69e57",
+        "type": "change",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "command_path",
+                "pt": "global",
+                "to": "\"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\"",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "353c71d73ff85d8a",
+        "type": "comment",
+        "z": "20c48bf776b506fa",
+        "name": "constants",
+        "info": "",
+        "x": 280,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7b578c2df028c1f8",
+        "type": "inject",
+        "z": "20c48bf776b506fa",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.0",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 100,
+        "wires": [
+            [
+                "43eeff1d5fc69e57"
+            ]
+        ]
+    },
+    {
+        "id": "e897b67c2310cec6",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadFPGATemp",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_xadc 1\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1400,
+        "wires": [
+            [
+                "dda0bace7fe56ac1"
+            ]
+        ]
+    },
+    {
+        "id": "246fb6f8745e644c",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "d72205edba054996",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "FPGA Temp",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 910,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "dda0bace7fe56ac1",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 750,
+        "y": 1400,
+        "wires": [
+            [
+                "246fb6f8745e644c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b04ddb1a399c2d32",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadFPGAVCCInt",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_xadc 2\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1460,
+        "wires": [
+            [
+                "a19280289d20ca8e"
+            ]
+        ]
+    },
+    {
+        "id": "aa6679d703dd34d5",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "d72205edba054996",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "FPGA VccInt",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 910,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "a19280289d20ca8e",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 750,
+        "y": 1460,
+        "wires": [
+            [
+                "aa6679d703dd34d5"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dc1203afbc71407a",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadFPGAVCCAux",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_xadc 3\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1520,
+        "wires": [
+            [
+                "1a5bc4f709118bf4"
+            ]
+        ]
+    },
+    {
+        "id": "e68d794c9bee8854",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "d72205edba054996",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "FPGA VccAux",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "1a5bc4f709118bf4",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 750,
+        "y": 1520,
+        "wires": [
+            [
+                "e68d794c9bee8854"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8ef8c0385d1183c9",
+        "type": "comment",
+        "z": "20c48bf776b506fa",
+        "name": "FPGA Status",
+        "info": "",
+        "x": 270,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "7afbd5ce535878c5",
+        "type": "function",
+        "z": "20c48bf776b506fa",
+        "name": "ReadFPGAVCCbram",
+        "func": "var command_string;\n//var command_path = \"/home/pedro/github/litefury_pcie/x1_pcie/apps/vinstru/\";\nvar command_path = global.get(\"command_path\");\n\ncommand_string = command_path + \"get_xadc 4\";\nmsg.payload = command_string;\nnode.send(msg);\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1580,
+        "wires": [
+            [
+                "601b23690b7c61eb"
+            ]
+        ]
+    },
+    {
+        "id": "b9f482087f31466c",
+        "type": "ui_text",
+        "z": "20c48bf776b506fa",
+        "group": "d72205edba054996",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "FPGA VccBram",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "601b23690b7c61eb",
+        "type": "exec",
+        "z": "20c48bf776b506fa",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 750,
+        "y": 1580,
+        "wires": [
+            [
+                "b9f482087f31466c"
+            ],
+            [],
+            []
+        ]
+    }
+]
